@@ -4,17 +4,63 @@
 		<h1 id="title">Game Platform Survey Form</h1>
 		<p id="description">Survey about game platforms used. Thank you for taking this survey.</p>
 		<form id="surver-form">
-			<label id="name-label">Name</label>
-			<input id="name" type="text" placeholder="Ex. John Smith" required=""/>
-			<label id="email-label">Email</label>
-			<input id="email" type="text" placeholder="Ex. john.smith@example.com" required=""/>
-			<label id="age-label">Age (Optional) </label>
-			<input id="number" type="number" placeholder="Ex. 24" />
+            <div>
+                <label id="name-label">Name</label>
+                <input id="name" type="text" placeholder="Ex. John Smith" required="" />
+            </div>
+            <div>
+                <label id="email-label">Email</label>
+                <input id="email" type="email" placeholder="Ex. john.smith@example.com" required="" />
+            </div>
+            <div>
+                <label id="age-label">Age (Optional) </label>
+                <input id="number" type="number" placeholder="Ex. 24" min="1" max="120" />
+            </div>
 			<div>
-
+				<p>Please select your most used platform or other if not listed.</p>
+				<select id="dropdown" name="Platform">
+                    <option>PC</option>
+                    <option>Console</option>
+                    <option>Mobile</option>
+                    <option>Portable Device</option>
+                    <option>Other</option>
+                </select>
+                <label id="other-platform-label">If Other was selected, please specify.</label>
+                <input id="other-platform" type="text" />
 			</div>
+            <div>
+                <label id="checkbox-label">Select platforms used.</label>
+                <div>
+                    <input id="steam" type="checkbox" name="Steam">
+                    <label id="steam-label">Steam</label>
+                </div>
+                <div>
+                    <input id="epic-games" type="checkbox">
+                    <label id="epic-games-label">Epic Games</label>
+                </div>
+                <div>
+                    <input id="xbox" type="checkbox">
+                    <label id="xbox-label">Xbox</label>
+                </div>
+                <div>
+                    <input id="playstation" type="checkbox">
+                    <label id="playstation-label">PlayStation</label>
+                </div>
+                <div>
+                    <input id="nintendo" type="checkbox">
+                    <label id="nintendo-label">Nintendo</label>
+                </div>
+                <div>
+                    <input id="other-checkbox" type="checkbox" onchange="document.getElmentById('other-checkbox').disabled = !this.checked;">
+                    <label id="other-checkbox-label">Other</label>
+                    <input id="other-checkbox" type="text" />
+                </div>
+            </div>
+            <div>
+                <label id="comments-label">Comments</label>
+                <input id="comments" type="text" />
+            </div>
 
-			<input id="comments" type="text" />
 			<input id="submit" type="button" placeholder="Submit"/>
 		</form>
 	</body>
